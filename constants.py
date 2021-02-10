@@ -17,7 +17,7 @@ class VECTORS:
 
 
 class CROWD:
-    number_individuals_in_crowd = 100
+    number_individuals_in_crowd = 50
     minimum_pixel_distance = 1
     minimum_distance_authorized_to_exit = 0.001
     number_of_movements = 1000

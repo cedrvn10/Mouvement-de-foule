@@ -16,7 +16,7 @@ def array_prefered_point_to_quit(array_individuals_position):
 
 
 def array_square_norm_gradient(array_point):
-    norm = np.sqrt(array_point[0]** 2 + array_point[1]** 2)
+    norm = np.sqrt(array_point[0] ** 2 + array_point[1] ** 2)
     if norm == 0:
         return False
     else:
@@ -25,15 +25,15 @@ def array_square_norm_gradient(array_point):
 
 def array_gradient_wall(array_coordinates):
     array_prefered_exit = array_prefered_point_to_quit(array_coordinates)
-    array_gradient = array_square_norm_gradient(np.subtract(array_coordinates,array_prefered_exit))
-    if not type(array_prefered_exit) == type(False):
+    array_gradient = array_square_norm_gradient(np.subtract(array_coordinates, array_prefered_exit))
+    if not isinstance(array_prefered_exit, bool):
         return array_gradient
     return False
 
 
 def array_unit_direction_nearest_gradient(array_unit_gradient):
-    theta = np.angle([array_unit_gradient[0]-1j*array_unit_gradient[1]])[0]
-    octant_circle_number = int(np.floor(((np.floor(theta/(2*np.pi)*16)+1)%16)/2))
+    theta = np.angle([array_unit_gradient[0] - 1j * array_unit_gradient[1]])[0]
+    octant_circle_number = int(np.floor(((np.floor(theta / (2 * np.pi) * 16) + 1) % 16) / 2))
     return VECTORS.acceptable_directions[octant_circle_number]
 
 
@@ -48,7 +48,7 @@ def array_compute_unit_vector_gradient_step(array_position):
 
 def int_distance_door(array_cadndiate):
     array_nearest_point_wall = array_prefered_point_to_quit(array_cadndiate)
-    return np.linalg.norm(array_cadndiate-array_nearest_point_wall)
+    return np.linalg.norm(array_cadndiate - array_nearest_point_wall)
 
 
 def score_valid_motion_vector_candidates(array_old_coordinates, list_array_new_locations_available):
@@ -72,7 +72,7 @@ def array_valid_new_point_coordinates(list_set_of_points, array_point):
             list_array_new_locations_available.append(array_candidate_new_point)
     if len(list_array_new_locations_available) == 0:
         return array_point
-    # return choice(list_array_new_locations_available)  # select_best_direction()
+    # return choice(list_array_new_locations_available)  # random direction of a point.
     return score_valid_motion_vector_candidates(array_point, list_array_new_locations_available)[0][1]
 
 
