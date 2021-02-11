@@ -41,7 +41,7 @@ def point_location_available(set_of_points, array_coordinates):
     return True
 
 
-def attribute_a_new_valid_point(set_of_points):
+def init_a_new_valid_point(set_of_points):
     while True:
         new_point = array(
             [random.randint(0, WINDOW.width_crowds_screen), random.randint(0, WINDOW.height_crowds_screen)])
@@ -54,5 +54,5 @@ def attribute_a_new_valid_point(set_of_points):
 def create_set_of_valid_points():
     set_of_points = []
     for i in range(0, CROWD.number_individuals_in_crowd):
-        set_of_points = attribute_a_new_valid_point(set_of_points)
+        set_of_points = init_a_new_valid_point(set_of_points)
     return set_of_points

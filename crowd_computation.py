@@ -32,7 +32,7 @@ def array_gradient_wall(array_coordinates):
 
 
 def array_unit_direction_nearest_gradient(array_unit_gradient):
-    theta = np.angle([array_unit_gradient[0] - 1j * array_unit_gradient[1]])[0]
+    theta = np.angle([array_unit_gradient[0] + 1j * array_unit_gradient[1]])[0]
     octant_circle_number = int(np.floor(((np.floor(theta / (2 * np.pi) * 16) + 1) % 16) / 2))
     return VECTORS.acceptable_directions[octant_circle_number]
 
@@ -46,22 +46,22 @@ def array_compute_unit_vector_gradient_step(array_position):
         return False
 
 
-def int_distance_door(array_cadndiate):
-    array_nearest_point_wall = array_prefered_point_to_quit(array_cadndiate)
-    return np.linalg.norm(array_cadndiate - array_nearest_point_wall)
+def float_distance_door(array_candiate_location):
+    array_nearest_point_wall = array_prefered_point_to_quit(array_candiate_location)
+    return np.linalg.norm(array_candiate_location - array_nearest_point_wall)
 
 
 def score_valid_motion_vector_candidates(array_old_coordinates, list_array_new_locations_available):
     array_gradient_unit_vector = array_compute_unit_vector_gradient_step(array_old_coordinates)
-    list_array_of_candidates = []
+    dict_array_of_candidates = {}
     for i in range(0, len(list_array_new_locations_available)):
         array_new_direction_available = list_array_new_locations_available[i] - array_old_coordinates
         if np.array_equal(array_new_direction_available, array_gradient_unit_vector):
-            list_array_of_candidates.append([0, list_array_new_locations_available[i]])
+            dict_array_of_candidates[0] = list_array_new_locations_available[i]
         else:
-            list_array_of_candidates.append([int_distance_door(list_array_new_locations_available[i]),
-                                             list_array_new_locations_available[i]])
-    return list_array_of_candidates
+            float_point_distance_to_door = float_distance_door(list_array_new_locations_available[i])
+            dict_array_of_candidates[float_point_distance_to_door] = list_array_new_locations_available[i]
+    return dict_array_of_candidates
 
 
 def array_valid_new_point_coordinates(list_set_of_points, array_point):
@@ -72,8 +72,11 @@ def array_valid_new_point_coordinates(list_set_of_points, array_point):
             list_array_new_locations_available.append(array_candidate_new_point)
     if len(list_array_new_locations_available) == 0:
         return array_point
-    # return choice(list_array_new_locations_available)  # random direction of a point.
-    return score_valid_motion_vector_candidates(array_point, list_array_new_locations_available)[0][1]
+    dict_scored_new_locations = score_valid_motion_vector_candidates(array_point, list_array_new_locations_available)
+    list_classified_scored_label_new_point_location = list(dict(
+        sorted(dict_scored_new_locations.items(), key=lambda item: item[0])).items())
+    array_vector_closest_to_the_door = list_classified_scored_label_new_point_location[0][1]
+    return array_vector_closest_to_the_door
 
 
 def move_all_points_once(list_array_set_of_points):
