@@ -24,8 +24,8 @@ class CROWD:
 
 
 class WINDOW:
-    width = 500
-    height = 500
+    width = 200
+    height = 200
 
     width_crowds_screen = width - 100
     height_crowds_screen = height - 100
@@ -33,9 +33,9 @@ class WINDOW:
     str_height, str_width, str_height_crowds_screen, str_width_crowds_screen = str(height), str(width), str(
         height_crowds_screen), str(width_crowds_screen)
 
-    door_coordinates = {'direction': 'r', 'min': 0, 'max': 200}
+    door_coordinates = {'direction': 'r', 'min': 1, 'max': 20}
 
     walls_coordinates = [
-        {'point1': (100, 100), 'point2': (200, 200)},
+        #{'point1': (100, 100), 'point2': (200, 200)},
         {'point1': (10, 10), 'point2': (20, 20)}
     ]

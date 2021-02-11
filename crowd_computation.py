@@ -10,7 +10,7 @@ def array_prefered_point_to_quit(array_individuals_position):
     int_not_null_coordinate = max(projection_outdoor_point[0], projection_outdoor_point[1])
     if int_not_null_coordinate > WINDOW.door_coordinates['max'] and int_not_null_coordinate > 0:
         return projection_outdoor_point / int_not_null_coordinate * WINDOW.door_coordinates['max']
-    if int_not_null_coordinate < WINDOW.door_coordinates['min'] and int_not_null_coordinate['max'] > 0:
+    if int_not_null_coordinate < WINDOW.door_coordinates['min'] and int_not_null_coordinate > 0:
         return projection_outdoor_point / int_not_null_coordinate * WINDOW.door_coordinates['min']
     return projection_outdoor_point
 

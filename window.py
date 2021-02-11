@@ -23,7 +23,7 @@ def create_door_on_epidemia_grid(grille_epidemie):
         WINDOW.door_coordinates['min'] * VECTORS.unit_vectors_tkinter[WINDOW.door_coordinates['direction']][1],
         WINDOW.door_coordinates['max'] * VECTORS.unit_vectors_tkinter[WINDOW.door_coordinates['direction']][0],
         WINDOW.door_coordinates['max'] * VECTORS.unit_vectors_tkinter[WINDOW.door_coordinates['direction']][1],
-        fill='black', width="8")
+        fill='white', width="8")
     return grille_epidemie
 
 
