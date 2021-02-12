@@ -3,7 +3,7 @@ from constants import *
 from crowd_computation import move_all_points_once
 
 
-def init_window():
+def init_crowd_window():
     fenetre = Tk()
     fenetre.title("Mouvement de foules : Fuite")
     fenetre.geometry(str(WINDOW.width) + 'x' + str(WINDOW.height))
@@ -11,7 +11,7 @@ def init_window():
     return fenetre
 
 
-def init_crow_canvas(fenetre):
+def init_epidemia_grid(fenetre):
     grille_epidemie = Canvas(fenetre, width=WINDOW.width_crowds_screen, height=WINDOW.height_crowds_screen,
                              bg='grey')
     return grille_epidemie

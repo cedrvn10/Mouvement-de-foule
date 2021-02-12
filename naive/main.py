@@ -6,7 +6,6 @@ import time
 set_of_people = create_set_of_valid_points()
 t0 = time.time()
 i = 0
-
 while i < CROWD.number_of_movements:
     set_of_people = move_all_points_once(set_of_people)
     print(str(i) + " :")

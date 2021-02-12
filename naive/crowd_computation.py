@@ -1,7 +1,6 @@
 from constants import *
 import numpy as np
-from crowd_init import array_point_location_available
-
+from crowd_init import point_location_available
 
 
 def array_prefered_point_to_quit(array_individuals_position):
@@ -19,7 +18,7 @@ def array_prefered_point_to_quit(array_individuals_position):
 def array_square_norm_gradient(array_point):
     norm = np.sqrt(array_point[0] ** 2 + array_point[1] ** 2)
     if norm == 0:
-        return False  # (?)
+        return False
     else:
         return np.array([array_point[0] / norm, array_point[1] / norm])
 
@@ -65,13 +64,12 @@ def score_valid_motion_vector_candidates(array_old_coordinates, list_array_new_l
     return dict_array_of_candidates
 
 
-def array_valid_new_point_coordinates(list_set_of_points, array_point):
+def array_valid_new_point_coordinates(list_set_of_points, array_point, list_vector_directions=False):
     list_array_new_locations_available = []
-    list_acceptable_values = VECTORS.acceptable_directions.values()
-    for array_motion in list_acceptable_values:
-        array_candidate_new_location = np.add(array_motion, array_point)
-        if array_point_location_available(list_set_of_points, array_candidate_new_location):
-            list_array_new_locations_available.append(array_candidate_new_location)
+    for array_motion in VECTORS.acceptable_directions.values():
+        array_candidate_new_point = np.add(array_motion, array_point)
+        if point_location_available(list_set_of_points, array_candidate_new_point):
+            list_array_new_locations_available.append(array_candidate_new_point)
     if len(list_array_new_locations_available) == 0:
         return array_point
     dict_scored_new_locations = score_valid_motion_vector_candidates(array_point, list_array_new_locations_available)
@@ -84,8 +82,7 @@ def array_valid_new_point_coordinates(list_set_of_points, array_point):
 def move_all_points_once(list_array_set_of_points, list_vectors_directions=False):
     new_list_array_set_of_points = list_array_set_of_points
     new_vector_set_of_points = []
-    int_lent_set_of_points = len(list_array_set_of_points)
-    for i in range(0, int_lent_set_of_points):
+    for i in range(0, len(list_array_set_of_points)):
         array_moved_point = array_valid_new_point_coordinates(new_list_array_set_of_points,
                                                               new_list_array_set_of_points[i])
         if list_vectors_directions:

@@ -2,9 +2,9 @@ from crowd_init import create_set_of_valid_points
 from window import *
 
 
-fenetre = init_window()
+fenetre = init_crowd_window()
 
-grille_epidemie = init_crow_canvas(fenetre)
+grille_epidemie = init_epidemia_grid(fenetre)
 grille_epidemie = create_door_on_epidemia_grid(grille_epidemie)
 create_walls_on_epidemia_grid(grille_epidemie)
 

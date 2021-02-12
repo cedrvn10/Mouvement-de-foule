@@ -26,8 +26,6 @@ class CROWD:
 class WINDOW:
     width = 300
     height = 300
-    number_subdivision_x_axis = np.floor(np.sqrt(width))
-    number_subdivision_y_axis = np.floor(np.sqrt(height))
 
     width_crowds_screen = width - 100
     height_crowds_screen = height - 100
