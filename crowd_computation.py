@@ -1,10 +1,5 @@
-from constants import *
-import numpy as np
 from crowd_init import point_location_available
-
-
-def tuple_substract_tuples(tuple1, tuple2):
-    return tuple(map(lambda i, j: i - j, tuple1, tuple2))
+from gradient_calculus import *
 
 
 def array_prefered_point_to_quit(array_individuals_position):
@@ -22,43 +17,6 @@ def array_prefered_point_to_quit(array_individuals_position):
         return (projection_outdoor_point[0] / int_not_null_coordinate * WINDOW.door_coordinates['min'],
                 projection_outdoor_point[1] / int_not_null_coordinate * WINDOW.door_coordinates['min'])
     return projection_outdoor_point
-
-
-def array_square_norm_gradient(array_point):
-    norm = np.sqrt(array_point[0] ** 2 + array_point[1] ** 2)
-    if norm == 0:
-        return False
-    else:
-        return np.array([array_point[0] / norm, array_point[1] / norm])
-
-
-def array_gradient_wall(array_coordinates):
-    array_prefered_exit = array_prefered_point_to_quit(array_coordinates)
-    tuple_coordinate = tuple(map(lambda i, j: i - j, array_coordinates, array_prefered_exit))
-    array_gradient = array_square_norm_gradient(tuple_coordinate)
-    if not isinstance(array_prefered_exit, bool):
-        return array_gradient
-    return False
-
-
-def array_unit_direction_nearest_gradient(array_unit_gradient):
-    theta = np.angle([array_unit_gradient[0] + 1j * array_unit_gradient[1]])[0]
-    octant_circle_number = int(np.floor(((np.floor(theta / (2 * np.pi) * 16) + 1) % 16) / 2))
-    return VECTORS.acceptable_directions[octant_circle_number]
-
-
-def array_compute_unit_vector_gradient_step(array_position):
-    array_gradient_step = array_gradient_wall(array_position)
-    if np.count_nonzero(array_gradient_step) > 0:
-        array_unit_gradient_step = array_gradient_step / np.linalg.norm(array_gradient_step)
-        return array_unit_direction_nearest_gradient(array_unit_gradient_step)
-    else:
-        return False
-
-
-def float_distance_door(array_candiate_location):
-    array_nearest_point_wall = array_prefered_point_to_quit(array_candiate_location)
-    return sum(map(lambda i, j: (i - j) ** 2, array_candiate_location, array_nearest_point_wall))
 
 
 def score_valid_motion_vector_candidates(tuple_old_coordinates, list_array_new_locations_available):

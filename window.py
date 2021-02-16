@@ -59,4 +59,4 @@ def move_set_of_points(fenetre, set_of_points, list_id_canvas_set_of_points, gri
                              new_vector_set_of_points[point][0],
                              new_vector_set_of_points[point][1])
 
-    fenetre.after(100, move_set_of_points, fenetre, set_of_points, list_id_canvas_set_of_points, grille_epidemie)
+    fenetre.after(10, move_set_of_points, fenetre, set_of_points, list_id_canvas_set_of_points, grille_epidemie)
