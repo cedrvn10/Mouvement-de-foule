@@ -1,5 +1,5 @@
-from crowd_init import create_set_of_valid_points
-from window import *
+from naive.crowd_init import create_set_of_valid_points
+from naive.window import *
 
 
 fenetre = init_crowd_window()

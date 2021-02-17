@@ -1,5 +1,5 @@
 import numpy as np
-
+import sys
 
 class VECTORS:
     unit_vectors_tkinter = {"u": (0, -1), "d": (0, 1),
@@ -16,11 +16,7 @@ class VECTORS:
     }
 
 
-class CROWD:
-    number_individuals_in_crowd = 50
-    minimum_pixel_distance = 1
-    minimum_distance_authorized_to_exit = 0.001
-    number_of_movements = 1000
+
 
 
 class WINDOW:
@@ -39,3 +35,11 @@ class WINDOW:
         {'point1': (100, 100), 'point2': (200, 200)},
         {'point1': (10, 10), 'point2': (20, 20)}
     ]
+
+
+class CROWD:
+    number_individuals_in_crowd = 50
+    minimum_pixel_distance = 1
+    minimum_distance_authorized_to_exit = 0.001
+    number_of_movements = 1000
+    int_score_new_location_preference = sys.maxsize

@@ -3,20 +3,18 @@ from crowd_computation import move_all_points_once
 from constants import CROWD
 import time
 
-set_of_people = create_set_of_valid_points()
-print("Tout début :\n")
-print(set_of_people)
-print("Nombre d'éléments dans un ensemble :")
-print(len(set_of_people))
+
+def set_tuple_skip_all_sequences_motion_crowd():
+    set_people_coordinates = create_set_of_valid_points()
+    for i in range(0, CROWD.number_of_movements):
+        set_people_coordinates = move_all_points_once(set_people_coordinates)
+        print(set_people_coordinates)  # (?)
+    return set_people_coordinates
+
 
 t0 = time.time()
-i = 0
-while i < CROWD.number_of_movements:
-    set_of_people = move_all_points_once(set_of_people)
-    print(str(i) + " :")
-    print(set_of_people)
-    i = i + 1
-
+set_tuple_final_coordinates_crowd = set_tuple_skip_all_sequences_motion_crowd()
+print(set_tuple_final_coordinates_crowd)
 t = time.time()
 
-print('Temps passé : ', t - t0)
+print('Temps d\'exécution du programme : ', t - t0)

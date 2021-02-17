@@ -1,16 +1,16 @@
-from crowd_init import create_set_of_valid_points
-from crowd_computation import move_all_points_once
-from constants import CROWD
+from naive.crowd_init import create_set_of_valid_points
+from naive.crowd_computation import move_all_points_once
+from naive.constants import CROWD
 import time
 
-set_of_people = create_set_of_valid_points()
+list_array_coordinates_crowd = create_set_of_valid_points()
 t0 = time.time()
-i = 0
-while i < CROWD.number_of_movements:
-    set_of_people = move_all_points_once(set_of_people)
-    print(str(i) + " :")
-    print(set_of_people)
-    i = i+1
+step_number = 0
+while step_number < CROWD.int_number_of_movements:
+    list_array_coordinates_crowd = move_all_points_once(list_array_coordinates_crowd)
+    print(str(step_number) + " :")
+    print(list_array_coordinates_crowd)
+    step_number = step_number + 1
 
 t = time.time()
 

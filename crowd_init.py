@@ -1,4 +1,5 @@
-from numpy import array, random
+from numpy import random
+
 from constants import WINDOW, CROWD
 
 
@@ -10,7 +11,7 @@ def array_is_outside_screen(array_coordinates):
         return False
 
 
-def array_is_into_a_wall(array_coordinates):
+def tuple_is_into_a_wall(array_coordinates):
     for i in range(0, len(WINDOW.walls_coordinates)):
         if array_coordinates[0] in range(WINDOW.walls_coordinates[i]['point1'][0],
                                          WINDOW.walls_coordinates[i]['point2'][0]) and \
@@ -20,17 +21,12 @@ def array_is_into_a_wall(array_coordinates):
     return False
 
 
-def set_already_contain_latter_array(set_of_points, array_coordinates):  # (?)
-    list_set_of_points = [list(a) for a in set_of_points]
-    list_coordinates = list(array_coordinates)
-    return list_coordinates in list_set_of_points
-
-
-def point_location_available(set_of_points, tuple_coordinates):
-    if array_is_outside_screen(tuple_coordinates):
+def bool_point_location_available(set_of_points, tuple_coordinates):
+    if not tuple_coordinates[0] in range(0, WINDOW.width_crowds_screen) or \
+            not tuple_coordinates[1] in range(0, WINDOW.height_crowds_screen):
         return False
 
-    if array_is_into_a_wall(tuple_coordinates):
+    if tuple_is_into_a_wall(tuple_coordinates):
         return False
 
     if tuple_coordinates in set_of_points:
@@ -43,7 +39,7 @@ def init_a_new_valid_point(set_of_points):
     while True:
         new_point = tuple([random.randint(0, WINDOW.width_crowds_screen),
                            random.randint(0, WINDOW.height_crowds_screen)])
-        if point_location_available(set_of_points, new_point):
+        if bool_point_location_available(set_of_points, new_point):
             break
     set_of_points.add(new_point)
     return set_of_points

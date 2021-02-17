@@ -1,5 +1,10 @@
-from crowd_init import point_location_available
+from crowd_init import bool_point_location_available
 from gradient_calculus import *
+
+
+def float_distance_door(array_candiate_location):
+    array_nearest_point_wall = array_prefered_point_to_quit(array_candiate_location)
+    return sum(map(lambda i, j: (i - j) ** 2, array_candiate_location, array_nearest_point_wall))
 
 
 def array_prefered_point_to_quit(array_individuals_position):
@@ -19,55 +24,53 @@ def array_prefered_point_to_quit(array_individuals_position):
     return projection_outdoor_point
 
 
-def score_valid_motion_vector_candidates(tuple_old_coordinates, list_array_new_locations_available):
-    tuple_gradient_unit_vector = array_compute_unit_vector_gradient_step(tuple_old_coordinates)
-    dict_tuple_of_candidates = {}
-    for tuple_location_available in list_array_new_locations_available:
-        tuple_new_direction_available = tuple(map(lambda i, j: i - j, tuple_location_available, tuple_old_coordinates))
-        if tuple_new_direction_available == tuple_gradient_unit_vector:
-            dict_tuple_of_candidates[0] = tuple_location_available
+def best_tuple_motion(set_of_points, tuple_old_coordinates_individual):
+    tuple_gradient_unit_vector = array_compute_unit_vector_gradient_step(tuple_old_coordinates_individual)  # Parall
+
+    tuple_best_direction = (0, 0)
+    int_score_best_direction = CROWD.int_score_new_location_preference
+
+    for tuple_direction_available in VECTORS.acceptable_directions.values():
+        if not bool_point_location_available(set_of_points,
+                                             tuple_addition(tuple_direction_available,
+                                                            tuple_old_coordinates_individual)):
+            continue
+        elif tuple_direction_available == tuple_gradient_unit_vector:
+            int_score_new_direction_proposed = 0
         else:
-            float_point_distance_to_door = float_distance_door(tuple_location_available)
-            dict_tuple_of_candidates[float_point_distance_to_door] = tuple_location_available
-    return dict_tuple_of_candidates
+            int_score_new_direction_proposed = float_distance_door(tuple_addition(tuple_direction_available,
+                                                                                  tuple_old_coordinates_individual))
+
+        if int_score_new_direction_proposed <= int_score_best_direction:
+            tuple_best_direction = tuple_direction_available
+            int_score_best_direction = int_score_new_direction_proposed
+
+    return tuple_best_direction
 
 
-def array_valid_new_point_coordinates(set_of_points, tuple_point):
-    list_tuple_new_locations_available = []
-    for array_motion in VECTORS.acceptable_directions.values():
-        array_candidate_new_point = tuple(map(sum, zip(array_motion, tuple_point)))
-        if point_location_available(set_of_points, array_candidate_new_point):
-            list_tuple_new_locations_available.append(array_candidate_new_point)
-
-    if len(list_tuple_new_locations_available) == 0:
-        return tuple_point
-
-    dict_scored_new_locations = score_valid_motion_vector_candidates(tuple_point, list_tuple_new_locations_available)
-
-    list_classified_scored_label_new_point_location = list(dict(sorted(dict_scored_new_locations.items(),
-                                                                       key=lambda item: item[0])).items())
-    array_vector_closest_to_the_door = list_classified_scored_label_new_point_location[0][1]
-
-    return array_vector_closest_to_the_door
-
-
-def move_all_points_once(set_of_points, list_vectors_directions=False, dict_corresponding_values_front=False):
+def move_all_points_once(set_of_points, list_vectors_directions=False, create_dict_reference_old_new_coordinates=False):
     new_vector_set_of_points = {}
-    copy_set_of_points = set_of_points.copy()
+    set_tuple_new_points_coordinates = set_of_points.copy()
     equiv_old_new_vector = {}
-    for tuple_set_of_points in set_of_points:
-        array_moved_point = array_valid_new_point_coordinates(copy_set_of_points, tuple_set_of_points)
-        copy_set_of_points.discard(tuple_set_of_points)
-        copy_set_of_points.add(array_moved_point)
 
-        if dict_corresponding_values_front:
-            equiv_old_new_vector[array_moved_point] = tuple_set_of_points
+    for tuple_individual_coordinates in set_of_points:
+        tuple_vector_motion = best_tuple_motion(set_tuple_new_points_coordinates, tuple_individual_coordinates)
+        tuple_moved_coordinates = tuple_addition(tuple_individual_coordinates, tuple_vector_motion)
+        set_tuple_new_points_coordinates.discard(tuple_individual_coordinates)
+        set_tuple_new_points_coordinates.add(tuple_moved_coordinates)
+
+        if len(set_tuple_new_points_coordinates) != CROWD.number_individuals_in_crowd:
+            exit("Erreur fatale : le nombre de points dans le nuage a cahngé")
+
+        if create_dict_reference_old_new_coordinates:
+            equiv_old_new_vector[tuple_moved_coordinates] = tuple_individual_coordinates
 
         if list_vectors_directions:
-            new_vector_set_of_points[array_moved_point] = tuple_substract_tuples(array_moved_point,
-                                                                                 tuple_set_of_points)
-    if list_vectors_directions and dict_corresponding_values_front:
-        return copy_set_of_points, new_vector_set_of_points, equiv_old_new_vector
+            new_vector_set_of_points[tuple_moved_coordinates] = tuple_substract_tuples(tuple_moved_coordinates,
+                                                                                       tuple_individual_coordinates)
+    if list_vectors_directions and equiv_old_new_vector:
+        return set_tuple_new_points_coordinates, new_vector_set_of_points, equiv_old_new_vector
     elif list_vectors_directions:
-        return copy_set_of_points, new_vector_set_of_points
-    return copy_set_of_points
+        return set_tuple_new_points_coordinates, new_vector_set_of_points
+
+    return set_tuple_new_points_coordinates
