@@ -17,4 +17,4 @@ set_tuple_final_coordinates_crowd = set_tuple_skip_all_sequences_motion_crowd()
 print(set_tuple_final_coordinates_crowd)
 t = time.time()
 
-print('Temps d\'exécution du programme : ', t - t0)
+print("Temps d'exécution du programme : ", t - t0)

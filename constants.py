@@ -1,9 +1,9 @@
 import numpy as np
 import sys
 
+
 class VECTORS:
-    unit_vectors_tkinter = {"u": (0, -1), "d": (0, 1),
-                            "l": (-1, 0), "r": (1, 0)}
+    unit_vectors_tkinter = {"u": (0, -1), "d": (0, 1), "l": (-1, 0), "r": (1, 0)}
     acceptable_directions = {
         0: (-1, 0),
         1: (-1, 1),
@@ -16,9 +16,6 @@ class VECTORS:
     }
 
 
-
-
-
 class WINDOW:
     width = 300
     height = 300
@@ -26,14 +23,18 @@ class WINDOW:
     width_crowds_screen = width - 100
     height_crowds_screen = height - 100
 
-    str_height, str_width, str_height_crowds_screen, str_width_crowds_screen = str(height), str(width), str(
-        height_crowds_screen), str(width_crowds_screen)
+    str_height, str_width, str_height_crowds_screen, str_width_crowds_screen = (
+        str(height),
+        str(width),
+        str(height_crowds_screen),
+        str(width_crowds_screen),
+    )
 
-    door_coordinates = {'direction': 'r', 'min': 1, 'max': 20}
+    door_coordinates = {"direction": "r", "min": 1, "max": 20}
 
     walls_coordinates = [
-        {'point1': (100, 100), 'point2': (200, 200)},
-        {'point1': (10, 10), 'point2': (20, 20)}
+        {"point1": (100, 100), "point2": (200, 200)},
+        {"point1": (10, 10), "point2": (20, 20)},
     ]
 
 

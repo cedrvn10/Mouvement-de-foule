@@ -14,4 +14,4 @@ while i < CROWD.number_of_movements:
 
 t = time.time()
 
-print('Temps passé : ', t - t0)
+print("Temps passé : ", t - t0)
