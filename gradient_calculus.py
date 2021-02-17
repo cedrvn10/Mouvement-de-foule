@@ -1,8 +1,9 @@
 from constants import *
 
-# import pycuda.driver as cuda
-# import pycuda.autoinit
-# from pycuda.compiler import SourceModule
+
+import pycuda.driver as cuda
+import pycuda.autoinit
+from pycuda.compiler import SourceModule
 
 
 def array_gradient_wall(array_coordinates):
@@ -93,9 +94,5 @@ def array_unit_direction_nearest_gradient(array_unit_gradient):
     return VECTORS.acceptable_directions[int_octant_circle_number]
 
 
-def compute_all_graidents_set_of_points(set_coordinates_points):
-    tuple_gradient_unit_vector = array_compute_unit_vector_gradient_step(
-        set_coordinates_points
-    )  # Parall
-
+def compute_all_graidents_set_of_points():
     pass
