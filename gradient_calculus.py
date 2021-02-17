@@ -1,9 +1,9 @@
 from constants import *
 
 
-import pycuda.driver as cuda
-import pycuda.autoinit
-from pycuda.compiler import SourceModule
+# import pycuda.driver as cuda
+# import pycuda.autoinit
+# from pycuda.compiler import SourceModule
 
 
 def array_gradient_wall(array_coordinates):

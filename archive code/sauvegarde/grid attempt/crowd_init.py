@@ -53,8 +53,8 @@ def array_is_into_a_wall(array_coordinates):  # (?)
 
 
 def set_already_contain_latter_array(list_of_points, array_coordinates):  # (?)
-    tuple_which_rectangle_contains_point = tuple_which_are_coordinates_of_rectangle_containing_array(
-        array_coordinates
+    tuple_which_rectangle_contains_point = (
+        tuple_which_are_coordinates_of_rectangle_containing_array(array_coordinates)
     )
     bool_check_border_rectangle_or_not = bool_in_border_of_rectangle(array_coordinates)
 
@@ -105,8 +105,8 @@ def init_a_new_valid_point(set_of_points):
                 random.randint(0, WINDOW.height_crowds_screen),
             ]
         )
-        tuple_rectangle_location_point = tuple_which_are_coordinates_of_rectangle_containing_array(
-            new_point
+        tuple_rectangle_location_point = (
+            tuple_which_are_coordinates_of_rectangle_containing_array(new_point)
         )
         if array_point_location_available(set_of_points, new_point):
             break

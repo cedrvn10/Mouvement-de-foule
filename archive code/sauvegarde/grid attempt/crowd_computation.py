@@ -137,8 +137,10 @@ def move_all_points_once(
                 array_moved_point = array_valid_new_point_coordinates(
                     list_list_list_array_set_of_points, array_coordinates_individual
                 )
-                tuple_moved_points_coordinates = tuple_which_are_coordinates_of_rectangle_containing_array(
-                    array_moved_point
+                tuple_moved_points_coordinates = (
+                    tuple_which_are_coordinates_of_rectangle_containing_array(
+                        array_moved_point
+                    )
                 )
                 if get_list_list_vector_direction:
                     new_list_list_array_set_of_points[
