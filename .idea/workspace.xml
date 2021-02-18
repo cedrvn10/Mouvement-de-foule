@@ -20,12 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0af76d3d-b204-4ca2-87ec-9732f5ed51f0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Mouvement-de-foule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Mouvement-de-foule.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crowd_computation.py" beforeDir="false" afterPath="$PROJECT_DIR$/crowd_computation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gpu_gradient.py" beforeDir="false" afterPath="$PROJECT_DIR$/gpu_gradient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gpu_gradient.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/gradient_calculus.py" beforeDir="false" afterPath="$PROJECT_DIR$/gradient_calculus.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/polymorphism.py" beforeDir="false" afterPath="$PROJECT_DIR$/polymorphism.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,10 +51,15 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/anaconda3/envs/mouvement_de_foule_conda" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.main (1)">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\cedri\OneDrive\Documents\Mouvement de foule\Mouvement-de-foule" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.gpu_gradient">
     <configuration name="gpu_gradient" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Mouvement-de-foule" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -143,10 +146,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main (1)" />
-        <item itemvalue="Python.main" />
         <item itemvalue="Python.gpu_gradient" />
         <item itemvalue="Python.main_window" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -177,6 +180,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="-36" y="1" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1613669874101">
+      <screen x="0" y="0" width="853" height="480" />
+    </state>
+    <state x="-36" y="1" key="#com.intellij.fileTypes.FileTypeChooser/0.0.853.480@0.0.853.480" timestamp="1613669874101" />
     <state x="224" y="0" key="#com.intellij.ide.ui.customization.CustomizableActionsPanel.FindAvailableActionsDialog" timestamp="1613583265111">
       <screen x="0" y="0" width="853" height="480" />
     </state>
@@ -185,22 +192,22 @@
       <screen x="0" y="0" width="853" height="480" />
     </state>
     <state x="0" y="0" key="FileChooserDialogImpl/0.0.853.480@0.0.853.480" timestamp="1613585238549" />
-    <state width="820" height="240" key="GridCell.Tab.0.bottom" timestamp="1613667287922">
+    <state width="820" height="240" key="GridCell.Tab.0.bottom" timestamp="1613672363867">
       <screen x="0" y="0" width="853" height="480" />
     </state>
-    <state width="820" height="240" key="GridCell.Tab.0.bottom/0.0.853.480@0.0.853.480" timestamp="1613667287922" />
-    <state width="820" height="240" key="GridCell.Tab.0.center" timestamp="1613667287922">
+    <state width="820" height="240" key="GridCell.Tab.0.bottom/0.0.853.480@0.0.853.480" timestamp="1613672363867" />
+    <state width="820" height="240" key="GridCell.Tab.0.center" timestamp="1613672363867">
       <screen x="0" y="0" width="853" height="480" />
     </state>
-    <state width="820" height="240" key="GridCell.Tab.0.center/0.0.853.480@0.0.853.480" timestamp="1613667287922" />
-    <state width="820" height="240" key="GridCell.Tab.0.left" timestamp="1613667287922">
+    <state width="820" height="240" key="GridCell.Tab.0.center/0.0.853.480@0.0.853.480" timestamp="1613672363867" />
+    <state width="820" height="240" key="GridCell.Tab.0.left" timestamp="1613672363867">
       <screen x="0" y="0" width="853" height="480" />
     </state>
-    <state width="820" height="240" key="GridCell.Tab.0.left/0.0.853.480@0.0.853.480" timestamp="1613667287922" />
-    <state width="820" height="240" key="GridCell.Tab.0.right" timestamp="1613667287922">
+    <state width="820" height="240" key="GridCell.Tab.0.left/0.0.853.480@0.0.853.480" timestamp="1613672363867" />
+    <state width="820" height="240" key="GridCell.Tab.0.right" timestamp="1613672363867">
       <screen x="0" y="0" width="853" height="480" />
     </state>
-    <state width="820" height="240" key="GridCell.Tab.0.right/0.0.853.480@0.0.853.480" timestamp="1613667287922" />
+    <state width="820" height="240" key="GridCell.Tab.0.right/0.0.853.480@0.0.853.480" timestamp="1613672363867" />
     <state width="820" height="88" key="GridCell.Tab.1.bottom" timestamp="1613653345407">
       <screen x="0" y="0" width="853" height="480" />
     </state>
@@ -225,6 +232,10 @@
       <screen x="0" y="0" width="853" height="480" />
     </state>
     <state width="746" height="476" key="SwitcherDM/0.0.853.480@0.0.853.480" timestamp="1613645805198" />
+    <state x="157" y="115" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1613670141639">
+      <screen x="0" y="0" width="853" height="480" />
+    </state>
+    <state x="157" y="115" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.853.480@0.0.853.480" timestamp="1613670141639" />
     <state x="0" y="0" width="824" height="904" key="find.popup" timestamp="1613666878611">
       <screen x="0" y="0" width="853" height="480" />
     </state>
