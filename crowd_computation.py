@@ -87,8 +87,7 @@ def move_all_points_once(
     set_tuple_new_points_coordinates = set_of_points.copy()
     equiv_old_new_vector = {}
 
-    # (?)
-    gpu_dict_list_compute_all_gradients_set_of_points(set_of_points)
+    # gpu_dict_list_compute_all_gradients_set_of_points(set_of_points)
 
     dict_tuple_gradient_unit_vector = dict_list_compute_all_gradients_set_of_points(set_of_points)
 

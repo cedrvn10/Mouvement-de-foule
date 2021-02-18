@@ -1,10 +1,7 @@
-from constants import *
-from gpu_gradient import *
 import numpy as np
 
-# import pycuda.driver as cuda
-# import pycuda.autoinit
-# from pycuda.compiler import SourceModule
+from constants import *
+# from gpu_gradient import *
 
 
 def array_gradient_wall(array_coordinates):
@@ -105,18 +102,21 @@ def dict_list_compute_all_gradients_set_of_points(set_of_points):
     return dict_tuple_gradient_unit_vector
 
 
-def gpu_dict_list_compute_all_gradients_set_of_points(set_of_points):
+def attempt_gpu_dict_list_compute_all_gradients_set_of_points(set_of_points):
     x_array_of_points = np.array([coordinates_pedestrian[0] for coordinates_pedestrian
-                                  in set_of_points]).astype(numpy.float32)
+                                  in set_of_points]).astype(np.float32)
 
     y_array_of_points = np.array([coordinates_pedestrian[1] for coordinates_pedestrian
-                                  in set_of_points]).astype(numpy.float32)
+                                  in set_of_points]).astype(np.float32)
 
-    dest = numpy.zeros_like(x_array_of_points)
-    multiply_them(
-        drv.Out(dest), drv.In(x_array_of_points), drv.In(y_array_of_points),
+    constants_coordinates = np.array([coordinates_pedestrian[1] for coordinates_pedestrian
+                                      in set_of_points]).astype(np.float32)
+
+    gradient_vectors = np.zeros_like(x_array_of_points)
+    gradient_them(
+        cuda.Out(gradient_vectors), cuda.In(x_array_of_points), cuda.In(y_array_of_points), cuda.In(constants_coordinates),
         block=(CROWD.number_individuals_in_crowd, 1, 1), grid=(1, 1))
-    print(dest)
-    print(x_array_of_points * y_array_of_points)
+
+    print(gradient_vectors)
 
     exit(0)
