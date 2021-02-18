@@ -1,7 +1,7 @@
 from numpy import sqrt
 
 
-class MyTuple(tuple): # not used ...
+class MyTuple(tuple):  # not used ...
     def add(self, tuple2):
         return tuple(map(lambda i, j: i + j, self, tuple2))
 

@@ -19,12 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0af76d3d-b204-4ca2-87ec-9732f5ed51f0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gpu_gradient.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradient_calculus.py" beforeDir="false" afterPath="$PROJECT_DIR$/gradient_calculus.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/polymorphism.py" beforeDir="false" afterPath="$PROJECT_DIR$/polymorphism.py" afterDir="false" />
-    </list>
+    <list default="true" id="0af76d3d-b204-4ca2-87ec-9732f5ed51f0" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,7 +54,7 @@
       <recent name="C:\Users\cedri\OneDrive\Documents\Mouvement de foule\Mouvement-de-foule" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.gpu_gradient">
+  <component name="RunManager" selected="Python.main (1)">
     <configuration name="gpu_gradient" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Mouvement-de-foule" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -146,10 +141,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main (1)" />
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.gpu_gradient" />
         <item itemvalue="Python.main_window" />
-        <item itemvalue="Python.main" />
-        <item itemvalue="Python.main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -180,6 +175,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="0" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1613672425351">
+      <screen x="0" y="0" width="853" height="480" />
+    </state>
+    <state x="0" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.853.480@0.0.853.480" timestamp="1613672425351" />
     <state x="-36" y="1" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1613669874101">
       <screen x="0" y="0" width="853" height="480" />
     </state>
@@ -192,22 +191,22 @@
       <screen x="0" y="0" width="853" height="480" />
     </state>
     <state x="0" y="0" key="FileChooserDialogImpl/0.0.853.480@0.0.853.480" timestamp="1613585238549" />
-    <state width="820" height="240" key="GridCell.Tab.0.bottom" timestamp="1613672363867">
+    <state width="820" height="240" key="GridCell.Tab.0.bottom" timestamp="1613672461878">
       <screen x="0" y="0" width="853" height="480" />
     </state>
-    <state width="820" height="240" key="GridCell.Tab.0.bottom/0.0.853.480@0.0.853.480" timestamp="1613672363867" />
-    <state width="820" height="240" key="GridCell.Tab.0.center" timestamp="1613672363867">
+    <state width="820" height="240" key="GridCell.Tab.0.bottom/0.0.853.480@0.0.853.480" timestamp="1613672461878" />
+    <state width="820" height="240" key="GridCell.Tab.0.center" timestamp="1613672461878">
       <screen x="0" y="0" width="853" height="480" />
     </state>
-    <state width="820" height="240" key="GridCell.Tab.0.center/0.0.853.480@0.0.853.480" timestamp="1613672363867" />
-    <state width="820" height="240" key="GridCell.Tab.0.left" timestamp="1613672363867">
+    <state width="820" height="240" key="GridCell.Tab.0.center/0.0.853.480@0.0.853.480" timestamp="1613672461878" />
+    <state width="820" height="240" key="GridCell.Tab.0.left" timestamp="1613672461878">
       <screen x="0" y="0" width="853" height="480" />
     </state>
-    <state width="820" height="240" key="GridCell.Tab.0.left/0.0.853.480@0.0.853.480" timestamp="1613672363867" />
-    <state width="820" height="240" key="GridCell.Tab.0.right" timestamp="1613672363867">
+    <state width="820" height="240" key="GridCell.Tab.0.left/0.0.853.480@0.0.853.480" timestamp="1613672461878" />
+    <state width="820" height="240" key="GridCell.Tab.0.right" timestamp="1613672461878">
       <screen x="0" y="0" width="853" height="480" />
     </state>
-    <state width="820" height="240" key="GridCell.Tab.0.right/0.0.853.480@0.0.853.480" timestamp="1613672363867" />
+    <state width="820" height="240" key="GridCell.Tab.0.right/0.0.853.480@0.0.853.480" timestamp="1613672461878" />
     <state width="820" height="88" key="GridCell.Tab.1.bottom" timestamp="1613653345407">
       <screen x="0" y="0" width="853" height="480" />
     </state>

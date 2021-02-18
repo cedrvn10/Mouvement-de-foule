@@ -1,6 +1,7 @@
 import numpy as np
 
 from constants import *
+
 # from gpu_gradient import *
 
 
@@ -48,8 +49,8 @@ def array_prefered_point_to_quit(array_individuals_position):
     )
 
     if (
-            int_not_null_coordinate > WINDOW.door_coordinates["max"]
-            and int_not_null_coordinate > 0
+        int_not_null_coordinate > WINDOW.door_coordinates["max"]
+        and int_not_null_coordinate > 0
     ):
         return (
             projection_outdoor_point[0]
@@ -95,13 +96,14 @@ def array_unit_direction_nearest_gradient(array_unit_gradient):
 def dict_list_compute_all_gradients_set_of_points(set_of_points):
     dict_tuple_gradient_unit_vector = {}
     for tuple_individual_coordinates in set_of_points:
-        dict_tuple_gradient_unit_vector[tuple_individual_coordinates] = array_compute_unit_vector_gradient_step(
+        dict_tuple_gradient_unit_vector[
             tuple_individual_coordinates
-        )
+        ] = array_compute_unit_vector_gradient_step(tuple_individual_coordinates)
 
     return dict_tuple_gradient_unit_vector
 
-'''
+
+"""
 def attempt_gpu_dict_list_compute_all_gradients_set_of_points(set_of_points):
 x_array_of_points = np.array([coordinates_pedestrian[0] for coordinates_pedestrian
 in set_of_points]).astype(np.float32)
@@ -119,4 +121,4 @@ block=(CROWD.number_individuals_in_crowd, 1, 1), grid=(1, 1))
 
 print(gradient_vectors)
 
-exit(0)'''
+exit(0)"""
