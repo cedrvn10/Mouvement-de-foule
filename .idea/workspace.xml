@@ -20,9 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0af76d3d-b204-4ca2-87ec-9732f5ed51f0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gpu_gradient.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cuda.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crowd_computation.py" beforeDir="false" afterPath="$PROJECT_DIR$/crowd_computation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cuda_ex.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/gradient_calculus.py" beforeDir="false" afterPath="$PROJECT_DIR$/gradient_calculus.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +56,7 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Python.main (1)">
-    <configuration name="cuda_ex" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="gpu_gradient" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Mouvement-de-foule" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -67,7 +68,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cuda_ex.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\cedri\OneDrive\Documents\Mouvement de foule\Mouvement-de-foule\gpu_gradient.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -118,11 +119,33 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main_window" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Mouvement-de-foule" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_window.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main (1)" />
-        <item itemvalue="Python.cuda_ex" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.gpu_gradient" />
+        <item itemvalue="Python.main_window" />
       </list>
     </recent_temporary>
   </component>
@@ -161,25 +184,45 @@
       <screen x="0" y="0" width="853" height="480" />
     </state>
     <state x="0" y="0" key="FileChooserDialogImpl/0.0.853.480@0.0.853.480" timestamp="1613585238549" />
-    <state width="820" height="240" key="GridCell.Tab.0.bottom" timestamp="1613593762130">
+    <state width="820" height="230" key="GridCell.Tab.0.bottom" timestamp="1613650499405">
       <screen x="0" y="0" width="853" height="480" />
     </state>
-    <state width="820" height="240" key="GridCell.Tab.0.bottom/0.0.853.480@0.0.853.480" timestamp="1613593762130" />
-    <state width="820" height="240" key="GridCell.Tab.0.center" timestamp="1613593762130">
+    <state width="820" height="230" key="GridCell.Tab.0.bottom/0.0.853.480@0.0.853.480" timestamp="1613650499405" />
+    <state width="820" height="230" key="GridCell.Tab.0.center" timestamp="1613650499405">
       <screen x="0" y="0" width="853" height="480" />
     </state>
-    <state width="820" height="240" key="GridCell.Tab.0.center/0.0.853.480@0.0.853.480" timestamp="1613593762130" />
-    <state width="820" height="240" key="GridCell.Tab.0.left" timestamp="1613593762129">
+    <state width="820" height="230" key="GridCell.Tab.0.center/0.0.853.480@0.0.853.480" timestamp="1613650499405" />
+    <state width="820" height="230" key="GridCell.Tab.0.left" timestamp="1613650499405">
       <screen x="0" y="0" width="853" height="480" />
     </state>
-    <state width="820" height="240" key="GridCell.Tab.0.left/0.0.853.480@0.0.853.480" timestamp="1613593762129" />
-    <state width="820" height="240" key="GridCell.Tab.0.right" timestamp="1613593762130">
+    <state width="820" height="230" key="GridCell.Tab.0.left/0.0.853.480@0.0.853.480" timestamp="1613650499405" />
+    <state width="820" height="230" key="GridCell.Tab.0.right" timestamp="1613650499405">
       <screen x="0" y="0" width="853" height="480" />
     </state>
-    <state width="820" height="240" key="GridCell.Tab.0.right/0.0.853.480@0.0.853.480" timestamp="1613593762130" />
+    <state width="820" height="230" key="GridCell.Tab.0.right/0.0.853.480@0.0.853.480" timestamp="1613650499405" />
+    <state width="820" height="88" key="GridCell.Tab.1.bottom" timestamp="1613649168933">
+      <screen x="0" y="0" width="853" height="480" />
+    </state>
+    <state width="820" height="88" key="GridCell.Tab.1.bottom/0.0.853.480@0.0.853.480" timestamp="1613649168933" />
+    <state width="820" height="88" key="GridCell.Tab.1.center" timestamp="1613649168933">
+      <screen x="0" y="0" width="853" height="480" />
+    </state>
+    <state width="820" height="88" key="GridCell.Tab.1.center/0.0.853.480@0.0.853.480" timestamp="1613649168933" />
+    <state width="820" height="88" key="GridCell.Tab.1.left" timestamp="1613649168933">
+      <screen x="0" y="0" width="853" height="480" />
+    </state>
+    <state width="820" height="88" key="GridCell.Tab.1.left/0.0.853.480@0.0.853.480" timestamp="1613649168933" />
+    <state width="820" height="88" key="GridCell.Tab.1.right" timestamp="1613649168933">
+      <screen x="0" y="0" width="853" height="480" />
+    </state>
+    <state width="820" height="88" key="GridCell.Tab.1.right/0.0.853.480@0.0.853.480" timestamp="1613649168933" />
     <state x="0" y="0" key="SettingsEditor" timestamp="1613590842079">
       <screen x="0" y="0" width="853" height="480" />
     </state>
     <state x="0" y="0" key="SettingsEditor/0.0.853.480@0.0.853.480" timestamp="1613590842079" />
+    <state width="746" height="476" key="SwitcherDM" timestamp="1613645805198">
+      <screen x="0" y="0" width="853" height="480" />
+    </state>
+    <state width="746" height="476" key="SwitcherDM/0.0.853.480@0.0.853.480" timestamp="1613645805198" />
   </component>
 </project>

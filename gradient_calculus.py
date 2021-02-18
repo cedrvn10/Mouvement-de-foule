@@ -1,5 +1,6 @@
 from constants import *
-
+from gpu_gradient import *
+import numpy as np
 
 # import pycuda.driver as cuda
 # import pycuda.autoinit
@@ -50,8 +51,8 @@ def array_prefered_point_to_quit(array_individuals_position):
     )
 
     if (
-        int_not_null_coordinate > WINDOW.door_coordinates["max"]
-        and int_not_null_coordinate > 0
+            int_not_null_coordinate > WINDOW.door_coordinates["max"]
+            and int_not_null_coordinate > 0
     ):
         return (
             projection_outdoor_point[0]
@@ -94,5 +95,28 @@ def array_unit_direction_nearest_gradient(array_unit_gradient):
     return VECTORS.acceptable_directions[int_octant_circle_number]
 
 
-def compute_all_graidents_set_of_points():
-    pass
+def dict_list_compute_all_gradients_set_of_points(set_of_points):
+    dict_tuple_gradient_unit_vector = {}
+    for tuple_individual_coordinates in set_of_points:
+        dict_tuple_gradient_unit_vector[tuple_individual_coordinates] = array_compute_unit_vector_gradient_step(
+            tuple_individual_coordinates
+        )
+
+    return dict_tuple_gradient_unit_vector
+
+
+def gpu_dict_list_compute_all_gradients_set_of_points(set_of_points):
+    x_array_of_points = np.array([coordinates_pedestrian[0] for coordinates_pedestrian
+                                  in set_of_points]).astype(numpy.float32)
+
+    y_array_of_points = np.array([coordinates_pedestrian[1] for coordinates_pedestrian
+                                  in set_of_points]).astype(numpy.float32)
+
+    dest = numpy.zeros_like(x_array_of_points)
+    multiply_them(
+        drv.Out(dest), drv.In(x_array_of_points), drv.In(y_array_of_points),
+        block=(CROWD.number_individuals_in_crowd, 1, 1), grid=(1, 1))
+    print(dest)
+    print(x_array_of_points * y_array_of_points)
+
+    exit(0)

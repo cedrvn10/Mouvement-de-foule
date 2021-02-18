@@ -51,10 +51,7 @@ def array_prefered_point_to_quit(array_individuals_position):
     return projection_outdoor_point
 
 
-def best_tuple_motion(set_of_points, tuple_old_coordinates_individual):
-    tuple_gradient_unit_vector = array_compute_unit_vector_gradient_step(
-        tuple_old_coordinates_individual
-    )  # Parall
+def best_tuple_motion(set_of_points, tuple_old_coordinates_individual, tuple_gradient_unit_vector):
 
     tuple_best_direction = (0, 0)
     int_score_best_direction = CROWD.int_score_new_location_preference
@@ -90,9 +87,16 @@ def move_all_points_once(
     set_tuple_new_points_coordinates = set_of_points.copy()
     equiv_old_new_vector = {}
 
+    # (?)
+    gpu_dict_list_compute_all_gradients_set_of_points(set_of_points)
+
+    dict_tuple_gradient_unit_vector = dict_list_compute_all_gradients_set_of_points(set_of_points)
+
     for tuple_individual_coordinates in set_of_points:
+
         tuple_vector_motion = best_tuple_motion(
-            set_tuple_new_points_coordinates, tuple_individual_coordinates
+            set_tuple_new_points_coordinates, tuple_individual_coordinates,
+            dict_tuple_gradient_unit_vector[tuple_individual_coordinates]
         )
         tuple_moved_coordinates = tuple_addition(
             tuple_individual_coordinates, tuple_vector_motion
@@ -110,6 +114,7 @@ def move_all_points_once(
             new_vector_set_of_points[tuple_moved_coordinates] = tuple_substract_tuples(
                 tuple_moved_coordinates, tuple_individual_coordinates
             )
+
     if list_vectors_directions and equiv_old_new_vector:
         return (
             set_tuple_new_points_coordinates,
